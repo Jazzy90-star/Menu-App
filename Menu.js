@@ -37,7 +37,7 @@ class Menu {
 //This is where my start loop starts
     start() {
         let selection = this.menuOptions();
-
+//Main options page
         while (selection !== '5') {
             switch (selection) {
                 case '1':
@@ -70,7 +70,7 @@ class Menu {
         5. Exit
         `);
     }
-//
+//This is the view authors section that defines the actions of this section. 
     viewAuthors() {
         let index = prompt('Enter the index of the Author you would like to see:');
         if (index > -1 && index < this.authors.length) {
@@ -91,7 +91,7 @@ class Menu {
             }
         }
     }
-
+//Sub section of view authors that lets you create, and delete books based on the author you pick
     createBook() {
         let title = prompt('Enter Book Title:');
         let genre = prompt('Enter Genre:');
@@ -105,13 +105,13 @@ class Menu {
             alert('Book deleted successfully.');
         } 
     }
-
+//This section lets you create a new author by inserting thier first and last name 
     createAuthor() {
         let firstName = prompt('Enter New Author\'s First Name');
         let lastName = prompt('Enter New Author\'s Last Name');
         this.authors.push(new Author(firstName, lastName));
     }
-
+//This section lets you delete an author based on their number in the index
     deleteAuthor() {
         let index = prompt('Select Author You Want to Delete');
         if (index > -1 && index < this.authors.length) {
@@ -119,7 +119,7 @@ class Menu {
             alert('Author deleted successfully.');
         } 
     }
-
+//This section displays all the authors in the index so the user knows what number they are.
     displayAuthors() {
         let display = '';
         for (let i = 0; i < this.authors.length; i++) {
@@ -127,7 +127,7 @@ class Menu {
         }
         alert(display);
     }
-
+//This is the menu in the subclass for view authors. 
     showMenuOptions(options) {
         return prompt(`
         0) Back
